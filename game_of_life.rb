@@ -12,12 +12,12 @@ class World
       x = position[:x] % @x 
       y = position[:y] % @y
 
-      grid[x] ||= Array.new(@y, '   ')
-      grid[x][y] = ' O '
+      grid[x] ||= Array.new(@y, '|___')
+      grid[x][y] = '|_0_'
     end
 
     grid.each do |row|
-      row ||= Array.new(@y, '   ')
+      row ||= Array.new(@y, '|___')
       puts row.join
     end
   end
@@ -25,8 +25,8 @@ end
 
 class Simulation
   def self.tick(turns)
-    turns.times do
-      yield
+    turns.times do |i|
+      yield i
     end
   end
 end

@@ -8,8 +8,10 @@ end
 
 world = World.new
 
-Simulation.tick(60) do
-  sleep(0.1)
+Simulation.tick(50) do |turn|
+  sleep(0.2)
   world.draw god.cells.map(&:position)
   god.evolve
+  puts
+  puts "Turn: #{turn}"
 end
