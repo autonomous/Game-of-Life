@@ -16,9 +16,10 @@ class World
       grid[x][y] = '|_0_'
     end
 
+    puts ' ' + Array.new(@x, '___').join(' ')
     grid.each do |row|
       row ||= Array.new(@y, '|___')
-      puts row.join
+      puts row.join + '|'
     end
   end
 end
